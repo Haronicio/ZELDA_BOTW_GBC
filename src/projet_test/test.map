@@ -1,0 +1,414 @@
+AREA .  .ABS.
+	RADIX HEX
+	BASE 0000
+	SIZE 0000
+	ATTRIB ABS OVR
+	GLOBALS
+		l__HEAP	0000
+		l__BSEG	0000
+		l_.  .ABS.	0000
+		l__GSFINAL	0000
+		l__ISEG	0000
+		s_.  .ABS.	0000
+		l__HOME	0000
+		s__HEADER	0000
+		l__XSEG	0000
+		.init	0000
+		l__OVERLAY	0000
+		l__GSINITTAIL	0001
+		l__DATA	0002
+		l__GSINIT	000B
+		l__BSS	008D
+		l__HEADER	01EF
+		s__CODE	0200
+		l__LIT	0B5A
+		l__CODE	1E07
+		s__HOME	2007
+		s__LIT	2007
+		s__GSINIT	2B61
+		s__GSINITTAIL	2B6C
+		s__GSFINAL	2B6D
+		.OAM	C000
+		s__DATA	C0A0
+		s__BSS	C0A2
+		s__HEAP	C12F
+		s__BSEG	C12F
+		s__ISEG	C12F
+		s__XSEG	C12F
+		s__OVERLAY	C12F
+		.STACK	E000
+		.refresh_OAM	FF80
+AREA _CODE
+	RADIX HEX
+	BASE 0200
+	SIZE 1E07
+	ATTRIB REL CON
+	GLOBALS
+		.set_mode	0200
+		.remove_VBL	0210
+		.remove_LCD	0216
+		.remove_TIM	021C
+		.remove_SIO	0222
+		.remove_JOY	0228
+		.add_VBL	022E
+		.add_LCD	0234
+		.add_TIM	023A
+		.add_SIO	0240
+		.add_JOY	0246
+		.remove_int	024C
+		.add_int	026C
+		.wait_vbl_done	0288
+		_wait_vbl_done	0288
+		_display_off	0299
+		.display_off	0299
+		.serial_IO	02BA
+		_mode	02E9
+		_get_mode	02F2
+		_enable_interrupts	02F7
+		_disable_interrupts	02F9
+		_reset	02FB
+		.reset	02FB
+		_set_interrupts	0301
+		_remove_VBL	030C
+		_remove_LCD	0317
+		_remove_TIM	0322
+		_remove_SIO	032D
+		_remove_JOY	0338
+		_add_VBL	0343
+		_add_LCD	034E
+		_add_TIM	0359
+		_add_SIO	0364
+		_add_JOY	036F
+		_clock	037A
+		__printTStates	0383
+		_main	0384
+		_set_bkg_palette	0549
+		_set_sprite_palette	0574
+		_set_bkg_palette_entry	059F
+		_set_sprite_palette_entry	05C7
+		_cpu_slow	05EF
+		_cpu_fast	060A
+		_cgb_compatibility	0611
+		.set_sprite_prop	065A
+		_set_sprite_prop	0667
+		_scroll_bkg	0672
+		_move_win	0688
+		.gmode	0691
+		.vbl	06F3
+		.lcd	06FE
+		.draw_image	070B
+		.switch_data	0715
+		.adv_gcurs	074C
+		.circle	0769
+		.horlin	080C
+		.verlin	0844
+		.circplot	08A0
+		.box	091E
+		.line	09F4
+		.xonly	0B15
+		.yonly	0C64
+		.plot	0C85
+		.wrbyte	0CA2
+		.getpix	0D24
+		.wrtchr	0D59
+		_gotogxy	0DBD
+		_wrtchr	0DC8
+		_getpix	0DDD
+		_color	0DE9
+		_circle	0DF8
+		_box	0E12
+		_line	0E36
+		_plot_point	0E4E
+		_plot	0E62
+		_switch_data	0E7E
+		_draw_image	0E99
+		.padup	0EAC
+		_waitpadup	0EAC
+		.jpad	0EBC
+		.wait_pad	0EE9
+		_joypad	0EF0
+		_waitpad	0EF5
+		.mv_sprite	0EFF
+		_move_sprite	0F0E
+		_get_win_tiles	0F1B
+		_gprintln	0F2F
+		_get_win_data	0FBD
+		_get_bkg_data	0FBD
+		_get_sprite_data	100A
+		_set_win_data	103A
+		_set_bkg_data	103A
+		_set_sprite_data	1087
+		.tmode_inout	10B6
+		_getchar	136C
+		_gets	137D
+		_send_byte	1394
+		_receive_byte	13A7
+		font_copy_uncompressed	13B8
+		font_copy_compressed	13EE
+		font_load	1443
+		font_copy_current	148B
+		font_set	14D3
+		.put_char	14E0
+		.out_char	14F9
+		.del_char	1500
+		_putchar	155A
+		_setchar	1561
+		_font_load	156A
+		_font_set	1578
+		_font_init	1587
+		_print_repeat	15A9
+		_gotoxy	15C0
+		_cls	15CB
+		.cls	15CB
+		_posx	15E6
+		_posy	15F7
+		.cr_curs	161F
+		.adv_curs	1634
+		.tmode	1690
+		.tmode_out	16B9
+		.copy_vram	16C9
+		_get_data	16D8
+		_set_data	16D8
+		_set_win_tiles	16EB
+		_gprintf	16FF
+		_scroll_win	1872
+		.get_xy_wtt	1888
+		.get_xy_btt	189A
+		.get_xy_tt	18A9
+		_get_tiles	18DA
+		_gprintn	18F3
+		.get_sprite_tile	196D
+		_get_sprite_tile	197A
+		.scroll_sprite	1994
+		_scroll_sprite	19A5
+		_printf	1BF0
+		_sprintf	1C5D
+		_move_bkg	1CB5
+		_puts	1CBE
+		.set_xy_wtt	1CF4
+		.set_xy_btt	1D05
+		.set_xy_tt	1D14
+		_set_tiles	1D45
+		.set_sprite_tile	1D5E
+		_set_sprite_tile	1D6B
+		.delay	1D76
+		_delay	1DB0
+		_get_bkg_tiles	1DB9
+		_gprint	1DCD
+		.get_sprite_prop	1DFA
+		_get_sprite_prop	1E07
+		.init_vram	1E10
+		.init_wtt	1E1E
+		.init_btt	1E2E
+		.init_tt	1E3C
+		.sgb_check	1E42
+		_sgb_check	1E42
+		.sgb_transfer	1E8F
+		.hiramcpy	1EF0
+		_hiramcpy	1EF7
+		__divschar	1F07
+		__modschar	1F13
+		__divsint	1F1E
+		__modsint	1F2F
+		__divuchar	1F3E
+		__moduchar	1F4A
+		__divuint	1F55
+		__moduint	1F66
+		.mod8	1F75
+		.div8	1F75
+		.mod16	1F7D
+		.div16	1F7D
+		.modu8	1FB3
+		.divu8	1FB3
+		.modu16	1FB6
+		.divu16	1FB6
+		_set_bkg_tiles	1FF3
+AREA _HEADER
+	RADIX HEX
+	BASE 0000
+	SIZE 01EF
+	ATTRIB ABS OVR
+	GLOBALS
+		_exit	01D1
+AREA _HOME
+	RADIX HEX
+	BASE 2007
+	SIZE 0000
+	ATTRIB REL CON
+AREA _LIT
+	RADIX HEX
+	BASE 2007
+	SIZE 0B5A
+	ATTRIB REL CON
+	GLOBALS
+		.y_table	2007
+		_font_ibm_fixed	225F
+		_font_ibm_fixed_tiles	2361
+AREA _GSINIT
+	RADIX HEX
+	BASE 2B61
+	SIZE 000B
+	ATTRIB REL CON
+	GLOBALS
+		gsinit	2B61
+AREA _GSINITTAIL
+	RADIX HEX
+	BASE 2B6C
+	SIZE 0001
+	ATTRIB REL CON
+AREA _GSFINAL
+	RADIX HEX
+	BASE 2B6D
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA
+	RADIX HEX
+	BASE C0A0
+	SIZE 0002
+	ATTRIB REL CON
+	GLOBALS
+		_digits	C0A0
+AREA _BSS
+	RADIX HEX
+	BASE C0A2
+	SIZE 008D
+	ATTRIB REL CON
+	GLOBALS
+		__cpu	C0A2
+		.mode	C0A3
+		__io_out	C0A4
+		__io_in	C0A5
+		__io_status	C0A6
+		.vbl_done	C0A7
+		_sys_time	C0A8
+		.sys_time	C0A8
+		.int_0x40	C0AA
+		.int_0x48	C0BA
+		.int_0x50	C0CA
+		.int_0x58	C0DA
+		.int_0x60	C0EA
+		.fg_colour	C0FA
+		.bg_colour	C0FB
+		font_current	C114
+		font_first_free_tile	C117
+		font_table	C118
+		.curx	C12A
+		.cury	C12B
+AREA _HEAP
+	RADIX HEX
+	BASE C12F
+	SIZE 0000
+	ATTRIB REL CON
+	GLOBALS
+		_malloc_heap_start	C12F
+AREA _OVERLAY
+	RADIX HEX
+	BASE C12F
+	SIZE 0000
+	ATTRIB REL CON
+AREA _ISEG
+	RADIX HEX
+	BASE C12F
+	SIZE 0000
+	ATTRIB REL CON
+AREA _BSEG
+	RADIX HEX
+	BASE C12F
+	SIZE 0000
+	ATTRIB REL CON
+AREA _XSEG
+	RADIX HEX
+	BASE C12F
+	SIZE 0000
+	ATTRIB REL CON
+MODULES
+	FILE C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/crt0.o
+		NAME Runtime
+	FILE C:\Users\Haron\AppData\Local\Temp/lcc423362.o
+		NAME lcc423360
+LIBRARIES
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE cgb.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE set_prop.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE scroll_b.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE mv_win.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE drawing.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE pad.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE mv_spr.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE get_wi_t.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE gprintln.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE get_data.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE set_data.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE input.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE serial.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE font.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE cpy_data.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE set_wi_t.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE gprintf.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE scroll_w.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE ibmfixed.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE get_xy_t.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE gprintn.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE get_spr.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE digits.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE scroll_s.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gbz80/gbz80.lib
+		MODULE printf.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE mv_bkg.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gbz80/gbz80.lib
+		MODULE puts.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE set_xy_t.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE set_spr.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE delay.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE get_bk_t.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE gprint.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE get_prop.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE init_tt.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE sgb.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE hiramcpy.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gbz80/gbz80.lib
+		MODULE div.o
+	LIBRARY C:\Users\Haron\Desktop\Documents\Programmation\GBC\COMPILER\lib/gb/gb.lib
+		MODULE set_bk_t.o
+USERBASEDEF
+	_CODE=0x0200
+	_DATA=0xC0A0
+	_CODE_1=0x4000
+USERGLOBALDEF
+	.OAM=0xC000
+	.STACK=0xE000
+	.refresh_OAM=0xFF80
+	.init=0x0000
